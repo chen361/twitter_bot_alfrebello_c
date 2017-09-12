@@ -1,0 +1,20 @@
+{
+  "name": "twitter_bot_alfieyfc",
+  "version": "1.0.0",
+  "description": "A twitter bot that keeps my twitter account active.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter",
+    "alfieyfc",
+    "alfieYFC"
+  ],
+  "author": "Alfie Chen",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.9"
+  }
+}
