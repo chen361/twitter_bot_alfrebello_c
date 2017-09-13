@@ -20,6 +20,7 @@ stream.on('tweet', function(tweet) {
     if ((tweet.user.screen_name != 'alfrebello_c') &&
         !tweet.retweeted_status &&
         !tweet.quoted_status &&
+        !tweet.in_reply_to_screen_name &&
         tweet.user.followers_count > 500 &&
         tweet.text.indexOf('I liked a @YouTube video') == -1) {
 
@@ -27,16 +28,16 @@ stream.on('tweet', function(tweet) {
 
         console.log(i + ". [Timestamp: " + tweet.created_at + "]\n" + tweet.user.name + " (" + tweet.user.screen_name + "): \n" + tweet.text + "\n");
         //console.log(tweet);
-        T.post('statuses/retweet/:id', { id: tweet.id_str }, function(err, data, response) {
+        T.post('favorites/create', { id: tweet.id_str }, function(err, data, response) {
             if (err) throw err;
-            //else console.log('retweeted');
+            //else console.log('liked');
         });
 
         if (tweet.user.followers_count > 1500) {
-            T.post('favorites/create', { id: tweet.id_str }, function(err, data, response) {
+            T.post('statuses/retweet/:id', { id: tweet.id_str }, function(err, data, response) {
 
                 if (err) throw err;
-                //else console.log('Faved');
+                //else console.log('retweeted');
             });
         }
     }
