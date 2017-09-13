@@ -1,5 +1,5 @@
 {
-  "name": "twitter_bot_alfieyfc",
+  "name": "twitter_bot_alfrebello_c",
   "version": "1.0.0",
   "description": "A twitter bot that keeps my twitter account active.",
   "main": "bot.js",
@@ -9,8 +9,9 @@
   },
   "keywords": [
     "twitter",
-    "alfieyfc",
-    "alfieYFC"
+    "alfrebello",
+    "hermitcraft",
+    "minecraft"
   ],
   "author": "Alfie Chen",
   "license": "ISC",

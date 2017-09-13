@@ -32,10 +32,12 @@ stream.on('tweet', function(tweet) {
             //else console.log('retweeted');
         });
 
-        T.post('favorites/create', { id: tweet.id_str }, function(err, data, response) {
+        if (tweet.user.followers_count > 1500) {
+            T.post('favorites/create', { id: tweet.id_str }, function(err, data, response) {
 
-            if (err) throw err;
-            //else console.log('Faved');
-        });
+                if (err) throw err;
+                //else console.log('Faved');
+            });
+        }
     }
 });
