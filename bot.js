@@ -3,7 +3,7 @@ var config = require("./config");
 var T = new Twit(config);
 
 
-var hashtags = 'hermitcraft, #DecidedlyVanilla, hermitquest';
+var hashtags = 'hermitcraft, #DecidedlyVanilla, hermitquest, minecraft, mojang';
 
 var filter_object = {
     track: hashtags,
@@ -21,7 +21,7 @@ stream.on('tweet', function(tweet) {
         !tweet.retweeted_status &&
         !tweet.quoted_status &&
         tweet.user.followers_count > 500 &&
-        tweet.text.indexOf('I liked a @YouTube video') != -1) {
+        tweet.text.indexOf('I liked a @YouTube video') == -1) {
 
         i++;
 
